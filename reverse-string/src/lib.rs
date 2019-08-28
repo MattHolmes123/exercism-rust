@@ -1,10 +1,8 @@
-extern crate unicode_segmentation;
 use unicode_segmentation::UnicodeSegmentation;
 
 pub fn reverse(input: &str) -> String {
-    let result: String = input.graphemes(true).rev().collect();
-
-    result
+    // Use 'turbofish' syntax to annotate the collect call
+    input.graphemes(true).rev().collect::<String>()
 }
 
 //pub fn v1_reverse(input: &str) -> String {
@@ -21,5 +19,11 @@ pub fn reverse(input: &str) -> String {
 
 //pub fn v2_reverse(input: &str) -> String {
 //    let result: String = input.chars().rev().collect();
+//    result
+//}
+
+//pub fn v3_reverse(input: &str) -> String {
+//    let result: String = input.graphemes(true).rev().collect();
+//
 //    result
 //}
