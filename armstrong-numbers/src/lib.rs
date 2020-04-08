@@ -1,6 +1,5 @@
 const RADIX: u32 = 10;
 
-
 pub fn is_armstrong_number(num: u32) -> bool {
     let mut total = 0;
     let num_as_str = num.to_string();
