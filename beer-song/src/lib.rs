@@ -9,8 +9,8 @@ pub fn verse(n: u32) -> String {
         _ => {
             let bottles = if n > 2 {"bottles"} else {"bottle"};
             format!(
-                "{n} bottles of beer on the wall, {n} bottles of beer.\nTake one down and pass it around, {n_minus_1} {bottles} of beer on the wall.\n",
-                n=n, n_minus_1=n-1, bottles=bottles
+                "{0} bottles of beer on the wall, {0} bottles of beer.\nTake one down and pass it around, {1} {2} of beer on the wall.\n",
+                n, n-1, bottles
             )
         }
     }
