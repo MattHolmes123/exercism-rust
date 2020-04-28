@@ -21,7 +21,8 @@ impl<'a> HighScores<'a> {
     }
 
     pub fn personal_top_three(&self) -> Vec<u32> {
-        let mut scores = self.scores().to_owned();
+        // My solution
+        let mut scores = self.scores().to_vec();
         scores.sort();
 
         let mut top_three = match scores.len() {
@@ -30,7 +31,17 @@ impl<'a> HighScores<'a> {
         };
 
         top_three.reverse();
-
         top_three
+
+        // Nice community solution one
+        // let mut scores = self.scores().to_vec();
+        // scores.sort_unstable_by(|a, b| b.cmp(a));
+        // scores.truncate(3);
+        // scores
+
+        // Nice community solution two
+        // let mut scores = self.scores().to_vec();
+        // scores.sort_unstable();
+        // scores.into_iter().rev().take(3).collect::<Vec<u32>>()
     }
 }
